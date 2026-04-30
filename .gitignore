@@ -1,0 +1,47 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Environment variables (keep .env.example, ignore actual .env)
+.env
+
+# ── Data — too large for GitHub (download via scripts/download_datasets.py) ──
+# Chest X-rays: 380 images = 1.9 GB
+data/raw/chest_xrays/
+# Audio samples: generated locally by scripts/generate_modality_samples.py
+data/raw/audio_samples/
+# FAISS index: rebuilt by scripts/build_rag_index.py
+data/pubmed_index/
+
+# Generated synthetic images are small (<1MB each) — keep in git
+# data/raw/mri_scans/     -> committed (10 x ~60KB)
+# data/raw/ct_scans/      -> committed (10 x ~50KB)
+# data/raw/ultrasound/    -> committed (10 x ~90KB)
+# data/processed/         -> committed (drug_interactions.json = 8KB)
+
+# Model weights (managed by Ollama and torchvision cache, not stored here)
+models/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
